@@ -1,0 +1,2242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Knowledge Management(LIBS884) ABU — Quiz(Categorized)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+  <div id="app" class="w-full max-w-3xl bg-white rounded-2xl shadow-lg p-6"></div>
+
+  <script>
+    // Placeholder quizData — real content will be inserted later
+    const quizData = {
+        
+  "categories": [
+    {
+      "name": "Foundations of KM",
+      "questions": [
+        {
+          "question": "Which of the following best describes data?",
+          "options": [
+            "A. Raw, unstructured facts without context",
+            "B. Organized and meaningful insights",
+            "C. Action-oriented understanding shaped by experience",
+            "D. Knowledge embedded in routines"
+          ],
+          "answer": "A",
+          "explanation": "Data are raw facts and figures lacking context or meaning until processed."
+        },
+        {
+          "question": "Information arises when:",
+          "options": [
+            "A. Data are stored as-is",
+            "B. Data are organized, structured, and contextualized",
+            "C. Knowledge is applied",
+            "D. People talk informally"
+          ],
+          "answer": "B",
+          "explanation": "Information is structured data given context so it becomes meaningful."
+        },
+        {
+          "question": "Knowledge differs from information because it:",
+          "options": [
+            "A. Is always written down",
+            "B. Embeds experience, values, and insight",
+            "C. Is only numeric",
+            "D. Cannot be shared"
+          ],
+          "answer": "B",
+          "explanation": "Knowledge includes understanding and action-oriented insight from experience."
+        },
+        {
+          "question": "The DIKW hierarchy stands for:",
+          "options": [
+            "A. Data, Information, Knowledge, Wisdom",
+            "B. Data, Information, Knowledge, Work",
+            "C. Documents, Inputs, Knowledge, Wisdom",
+            "D. Data, Inputs, Knowledge, Workflow"
+          ],
+          "answer": "A",
+          "explanation": "DIKW: Data -> Information -> Knowledge -> Wisdom."
+        },
+        {
+          "question": "Davenport & Prusak define knowledge as:",
+          "options": [
+            "A. Static documents only",
+            "B. A fluid mix of framed experience, values, contextual information, and intuition",
+            "C. Purely numerical data",
+            "D. A technology-only concept"
+          ],
+          "answer": "B",
+          "explanation": "They emphasize knowledge as a dynamic mix of experience, values and context."
+        },
+        {
+          "question": "Which is NOT a fundamental KM component?",
+          "options": [
+            "A. People",
+            "B. Processes",
+            "C. Technology",
+            "D. Office location"
+          ],
+          "answer": "D",
+          "explanation": "People, processes and technology are core; office location is not a core KM component."
+        },
+        {
+          "question": "A main purpose of KM is to:",
+          "options": [
+            "A. Make the right knowledge available at the right time",
+            "B. Increase paperwork",
+            "C. Replace managers",
+            "D. Centralize building maintenance"
+          ],
+          "answer": "A",
+          "explanation": "KM aims to deliver useful knowledge to support decisions and actions."
+        },
+        {
+          "question": "Which statement about information technology (IT) in KM is true?",
+          "options": [
+            "A. IT alone guarantees KM success",
+            "B. IT supports KM but culture and processes matter too",
+            "C. IT is irrelevant to KM",
+            "D. IT replaces tacit knowledge"
+          ],
+          "answer": "B",
+          "explanation": "Technology helps but KM needs people, culture, and processes as well."
+        },
+        {
+          "question": "Which is a direct benefit of KM?",
+          "options": [
+            "A. Improved decision-making",
+            "B. Increased paper filing",
+            "C. Higher knowledge hoarding",
+            "D. More siloed work"
+          ],
+          "answer": "A",
+          "explanation": "KM improves access to knowledge and supports better decisions."
+        },
+        {
+          "question": "Which of these best expresses the final goal of KM?",
+          "options": [
+            "A. Preserving knowledge for its own sake",
+            "B. Enhancing organizational performance and competitive advantage",
+            "C. Increasing storage capacity",
+            "D. Hiring more IT staff"
+          ],
+          "answer": "B",
+          "explanation": "KM is intended to improve performance and deliver advantage."
+        },
+        {
+          "question": "Which is an example of explicit knowledge?",
+          "options": [
+            "A. A master craftsman's intuition",
+            "B. Technical manuals and blueprints",
+            "C. Unspoken workplace norms",
+            "D. Personal gut feelings"
+          ],
+          "answer": "B",
+          "explanation": "Explicit knowledge is codified and easily shared in documents."
+        },
+        {
+          "question": "Which is an example of tacit knowledge?",
+          "options": [
+            "A. A catalog",
+            "B. A written procedure",
+            "C. An experienced surgeon's intuition",
+            "D. A PDF report"
+          ],
+          "answer": "C",
+          "explanation": "Tacit knowledge is personal, experiential and hard to codify."
+        },
+        {
+          "question": "Which is an example of embedded knowledge?",
+          "options": [
+            "A. A single employee's memory",
+            "B. Company routines and engineering designs",
+            "C. A textbook",
+            "D. A public website"
+          ],
+          "answer": "B",
+          "explanation": "Embedded knowledge is built into processes, products and routines."
+        },
+        {
+          "question": "Which view sees KM primarily as an IT problem?",
+          "options": [
+            "A. Organisational",
+            "B. Techno-centric",
+            "C. Ecological",
+            "D. Human-centred"
+          ],
+          "answer": "B",
+          "explanation": "The techno-centric perspective emphasizes technology as the primary enabler."
+        },
+        {
+          "question": "Which view emphasizes culture, leadership and incentives for KM?",
+          "options": [
+            "A. Organisational",
+            "B. Techno-centric",
+            "C. Mechanical",
+            "D. Hardware-first"
+          ],
+          "answer": "A",
+          "explanation": "The organisational perspective focuses on people and culture."
+        },
+        {
+          "question": "Which view treats organisations as living systems where knowledge adapts?",
+          "options": [
+            "A. Techno-centric",
+            "B. Organisational",
+            "C. Ecological",
+            "D. Financial"
+          ],
+          "answer": "C",
+          "explanation": "The ecological perspective sees knowledge as part of an adaptive ecosystem."
+        },
+        {
+          "question": "Who is often credited with popularizing the learning organization concept?",
+          "options": [
+            "A. Michael Polanyi",
+            "B. Peter Senge",
+            "C. Leif Edvinsson",
+            "D. Hubert Saint-Onge"
+          ],
+          "answer": "B",
+          "explanation": "Peter Senge wrote 'The Fifth Discipline' and promoted learning organizations."
+        },
+        {
+          "question": "Which thinker introduced the term 'tacit knowledge' in 1966?",
+          "options": [
+            "A. Ikujiro Nonaka",
+            "B. Michael Polanyi",
+            "C. Chris Argyris",
+            "D. Peter Drucker"
+          ],
+          "answer": "B",
+          "explanation": "Michael Polanyi discussed tacit knowledge in 'The Tacit Dimension'."
+        },
+        {
+          "question": "Which role is focused on managing an organization's knowledge capital?",
+          "options": [
+            "A. CFO",
+            "B. CKO (Chief Knowledge Officer)",
+            "C. CIO",
+            "D. CTO"
+          ],
+          "answer": "B",
+          "explanation": "CKOs were created to manage knowledge capital similarly to financial capital."
+        },
+        {
+          "question": "Which is a common KM motivation for organisations?",
+          "options": [
+            "A. Increasing product lifecycles",
+            "B. Preserving knowledge for reuse and innovation",
+            "C. Restricting employee learning",
+            "D. Eliminating knowledge sharing"
+          ],
+          "answer": "B",
+          "explanation": "Organisations implement KM to reuse knowledge, innovate and retain memory."
+        }
+      ]
+    },
+    {
+      "name": "Types of Knowledge",
+      "questions": [
+        {
+          "question": "Explicit knowledge is:",
+          "options": [
+            "A. Personal experience that is hard to write down",
+            "B. Knowledge codified in documents and manuals",
+            "C. Only stored in people's heads",
+            "D. Always tacit"
+          ],
+          "answer": "B",
+          "explanation": "Explicit knowledge is recorded and shareable."
+        },
+        {
+          "question": "Tacit knowledge is best shared by:",
+          "options": [
+            "A. Publishing in journals",
+            "B. Mentoring, observation and practice",
+            "C. Uploading to a repository",
+            "D. Printing manuals"
+          ],
+          "answer": "B",
+          "explanation": "Tacit knowledge is transferred through socialisation and practice."
+        },
+        {
+          "question": "Which of the following is a typical example of explicit knowledge?",
+          "options": [
+            "A. A recipe written in a book",
+            "B. Troubleshooting intuition",
+            "C. Cultural norms",
+            "D. Personal heuristics"
+          ],
+          "answer": "A",
+          "explanation": "A written recipe is codified explicit knowledge."
+        },
+        {
+          "question": "Embedded knowledge could be found in:",
+          "options": [
+            "A. An employee's private notes",
+            "B. A factory's standard operating routines",
+            "C. A library of research papers",
+            "D. An email inbox"
+          ],
+          "answer": "B",
+          "explanation": "Embedded knowledge is ingrained in routines and operations."
+        },
+        {
+          "question": "Which knowledge type is easiest to copy and distribute?",
+          "options": [
+            "A. Tacit knowledge",
+            "B. Embedded knowledge",
+            "C. Explicit knowledge",
+            "D. Intuitive knowledge"
+          ],
+          "answer": "C",
+          "explanation": "Explicit knowledge is codified, making it easy to copy and share."
+        },
+        {
+          "question": "Which knowledge type is often context-specific and hard to transfer?",
+          "options": [
+            "A. Explicit knowledge",
+            "B. Tacit knowledge",
+            "C. Documented procedures",
+            "D. Public reports"
+          ],
+          "answer": "B",
+          "explanation": "Tacit knowledge depends on experience and context."
+        },
+        {
+          "question": "Which of the following is an example of extra-organisational knowledge?",
+          "options": [
+            "A. Internal memos",
+            "B. Industry research and external best practice",
+            "C. Personal diaries",
+            "D. Internal SOPs"
+          ],
+          "answer": "B",
+          "explanation": "Extra-organisational knowledge comes from outside the firm, like industry research."
+        },
+        {
+          "question": "Which best describes 'knowledge of the organisation qua entity'?",
+          "options": [
+            "A. Individual technical skills",
+            "B. Subtle knowledge about politics, procedures and culture",
+            "C. External market data",
+            "D. Financial reports"
+          ],
+          "answer": "B",
+          "explanation": "It's tacit knowledge about the organisation as an entity (norms, influences)."
+        },
+        {
+          "question": "Which is true about codified explicit knowledge?",
+          "options": [
+            "A. It cannot be updated",
+            "B. It requires maintenance to remain useful",
+            "C. It is always tacit",
+            "D. It is never stored electronically"
+          ],
+          "answer": "B",
+          "explanation": "Explicit knowledge needs updating to remain relevant."
+        },
+        {
+          "question": "Which method helps convert tacit to explicit knowledge?",
+          "options": [
+            "A. Mentoring",
+            "B. Externalisation (e.g., writing manuals)",
+            "C. Observation",
+            "D. Apprenticeship"
+          ],
+          "answer": "B",
+          "explanation": "Externalisation documents tacit knowledge into explicit forms."
+        },
+        {
+          "question": "Which is an example of tacit knowledge in IT?",
+          "options": [
+            "A. System architecture diagrams",
+            "B. A sysadmin's troubleshooting intuition",
+            "C. User manuals",
+            "D. Database schemas"
+          ],
+          "answer": "B",
+          "explanation": "Troubleshooting intuition is tacit, gained by experience."
+        },
+        {
+          "question": "Which action helps retain embedded knowledge?",
+          "options": [
+            "A. Ignoring process documentation",
+            "B. Capturing routines and embedding them into systems",
+            "C. Encouraging secrecy",
+            "D. Deleting old workflows"
+          ],
+          "answer": "B",
+          "explanation": "Recording routines and systems helps maintain embedded knowledge."
+        },
+        {
+          "question": "Which is NOT a way to share tacit knowledge?",
+          "options": [
+            "A. Shadowing and mentoring",
+            "B. Long documented manuals",
+            "C. Communities of practice",
+            "D. Apprenticeship"
+          ],
+          "answer": "B",
+          "explanation": "Tacit knowledge is best shared via social interaction, not long documents alone."
+        },
+        {
+          "question": "Which knowledge type contributes most to 'competency' in an organization?",
+          "options": [
+            "A. Explicit knowledge only",
+            "B. Tacit and embedded knowledge",
+            "C. Only external publications",
+            "D. Only financial knowledge"
+          ],
+          "answer": "B",
+          "explanation": "Tacit and embedded knowledge form core competencies and capabilities."
+        },
+        {
+          "question": "Which is an example of converting explicit to tacit knowledge?",
+          "options": [
+            "A. Reading a manual and applying it until it becomes second nature",
+            "B. Writing a report",
+            "C. Filing documents",
+            "D. Printing templates"
+          ],
+          "answer": "A",
+          "explanation": "Internalisation is absorbing explicit knowledge through practice."
+        },
+        {
+          "question": "Which statement about embedded knowledge is correct?",
+          "options": [
+            "A. It is always visible and explicit",
+            "B. It is often invisible, embedded in process and culture",
+            "C. It only exists in documents",
+            "D. It is always held by individuals"
+          ],
+          "answer": "B",
+          "explanation": "Embedded knowledge is ingrained in how work is done at organizational level."
+        },
+        {
+          "question": "Which knowledge type is most vulnerable when employees leave?",
+          "options": [
+            "A. Explicit knowledge",
+            "B. Tacit knowledge",
+            "C. Embedded knowledge",
+            "D. Public information"
+          ],
+          "answer": "B",
+          "explanation": "Tacit knowledge leaves with people unless captured or transferred."
+        },
+        {
+          "question": "Which is a suitable tool to capture explicit knowledge?",
+          "options": [
+            "A. Wikis and document repositories",
+            "B. Personal conversations",
+            "C. Tacit coaching only",
+            "D. Word of mouth"
+          ],
+          "answer": "A",
+          "explanation": "Wikis and repositories store codified explicit knowledge for reuse."
+        },
+        {
+          "question": "Which approach combines tacit and explicit knowledge dynamically?",
+          "options": [
+            "A. SECI model",
+            "B. Financial accounting",
+            "C. Payroll systems",
+            "D. Procurement"
+          ],
+          "answer": "A",
+          "explanation": "SECI describes socialisation, externalisation, combination and internalisation."
+        }
+      ]
+    },
+    {
+      "name": "History & Perspectives of KM",
+      "questions": [
+        {
+          "question": "KM became widely recognized as a discipline in which decade?",
+          "options": [
+            "A. 1970s",
+            "B. 1980s",
+            "C. 1990s",
+            "D. 2000s"
+          ],
+          "answer": "C",
+          "explanation": "The 1990s saw KM emerge as a distinct field with wider attention."
+        },
+        {
+          "question": "Who were among the first Chief Knowledge Officers (CKOs)?",
+          "options": [
+            "A. Leif Edvinsson and Hubert Saint-Onge",
+            "B. Nonaka & Takeuchi",
+            "C. Peter Drucker and Senge",
+            "D. Argyris & Schön"
+          ],
+          "answer": "A",
+          "explanation": "Leif Edvinsson (Skandia) and Hubert Saint-Onge are early CKOs."
+        },
+        {
+          "question": "Which early KM technologies were common in the 1980s?",
+          "options": [
+            "A. Expert systems and knowledge bases",
+            "B. Cloud-based collaboration",
+            "C. Social media platforms",
+            "D. Mobile apps"
+          ],
+          "answer": "A",
+          "explanation": "Expert systems and knowledge bases were early attempts to capture expertise."
+        },
+        {
+          "question": "Peter Drucker saw KM as coordination and exploitation of knowledge to create:",
+          "options": [
+            "A. Bureaucracy",
+            "B. Benefit and competitive advantage",
+            "C. More paperwork",
+            "D. Office expansion"
+          ],
+          "answer": "B",
+          "explanation": "Drucker emphasized benefit and competitive advantage from knowledge."
+        },
+        {
+          "question": "Which perspective emphasizes technology as the main KM enabler?",
+          "options": [
+            "A. Organisational",
+            "B. Techno-centric",
+            "C. Ecological",
+            "D. Human-centered"
+          ],
+          "answer": "B",
+          "explanation": "Techno-centric focuses on IT systems, databases and tools."
+        },
+        {
+          "question": "Which perspective emphasizes social systems, culture and leadership?",
+          "options": [
+            "A. Techno-centric",
+            "B. Organisational",
+            "C. Data-centric",
+            "D. Mechanical"
+          ],
+          "answer": "B",
+          "explanation": "Organisational perspective highlights people, culture and processes."
+        },
+        {
+          "question": "Which perspective treats knowledge as part of a living system?",
+          "options": [
+            "A. Techno-centric",
+            "B. Ecological",
+            "C. Organisational",
+            "D. Functional"
+          ],
+          "answer": "B",
+          "explanation": "Ecological view sees KM as adaptive and co-evolving with environment."
+        },
+        {
+          "question": "Ikujiro Nonaka is best known for:",
+          "options": [
+            "A. Defining tacit knowledge",
+            "B. SECI model of knowledge creation",
+            "C. Balanced scorecard",
+            "D. Payroll systems"
+          ],
+          "answer": "B",
+          "explanation": "Nonaka (with Takeuchi) proposed the SECI knowledge creation model."
+        },
+        {
+          "question": "Which scholar introduced the idea that 'we can know more than we can tell'?",
+          "options": [
+            "A. Michael Polanyi",
+            "B. Peter Senge",
+            "C. Peter Drucker",
+            "D. Leif Edvinsson"
+          ],
+          "answer": "A",
+          "explanation": "Polanyi coined the core idea behind tacit knowledge."
+        },
+        {
+          "question": "Which early role compared knowledge capital with financial capital?",
+          "options": [
+            "A. CEO",
+            "B. CKO",
+            "C. CFO",
+            "D. COO"
+          ],
+          "answer": "B",
+          "explanation": "CKOs manage knowledge capital similarly to financial capital."
+        },
+        {
+          "question": "Which pair developed the SECI model?",
+          "options": [
+            "A. Davenport & Prusak",
+            "B. Nonaka & Takeuchi",
+            "C. Argyris & Schön",
+            "D. Levitt & March"
+          ],
+          "answer": "B",
+          "explanation": "Nonaka and Takeuchi formulated SECI."
+        },
+        {
+          "question": "Which decade saw the emergence of groupware and collaboration tools?",
+          "options": [
+            "A. 1960s",
+            "B. 1970s",
+            "C. 1980s-1990s",
+            "D. 2010s"
+          ],
+          "answer": "C",
+          "explanation": "Groupware and early collaboration tools became visible in the 1980s-1990s."
+        },
+        {
+          "question": "Which publication is associated with arguing knowledge should be managed?",
+          "options": [
+            "A. The Fifth Discipline",
+            "B. The Tacit Dimension",
+            "C. Knowledge Management texts in 1990s",
+            "D. Balanced Scorecard papers"
+          ],
+          "answer": "C",
+          "explanation": "1990s literature formalised KM as a discipline; numerous texts emerged."
+        },
+        {
+          "question": "Which concept is linked to 'knowledge capital' measurement?",
+          "options": [
+            "A. Skandia Navigator",
+            "B. Payroll ledger",
+            "C. Timekeeping",
+            "D. Office occupancy"
+          ],
+          "answer": "A",
+          "explanation": "Skandia Navigator is an early instrument for intellectual capital measurement."
+        },
+        {
+          "question": "Which organization early on put CKOs in place to manage intangible assets?",
+          "options": [
+            "A. IBM",
+            "B. Skandia",
+            "C. Microsoft",
+            "D. Toyota"
+          ],
+          "answer": "B",
+          "explanation": "Skandia (Leif Edvinsson) pioneered knowledge capital management."
+        },
+        {
+          "question": "Which statement is true about KM’s history?",
+          "options": [
+            "A. KM appeared overnight",
+            "B. KM evolved from AI, expert systems and management theory",
+            "C. KM ignores people",
+            "D. KM is only IT"
+          ],
+          "answer": "B",
+          "explanation": "KM evolved from tech (expert systems) and organizational thinking."
+        },
+        {
+          "question": "Thomas Stewart contributed to KM by:",
+          "options": [
+            "A. Inventing SECI",
+            "B. Popularizing 'intellectual capital' and KM concepts in business press",
+            "C. Creating payroll standards",
+            "D. Designing manufacturing lines"
+          ],
+          "answer": "B",
+          "explanation": "Thomas Stewart popularized the idea of intellectual capital in business."
+        },
+        {
+          "question": "Which early KM tool attempted to capture expert rules in software?",
+          "options": [
+            "A. Expert systems",
+            "B. Social networks",
+            "C. Groupware chat",
+            "D. Cloud storage"
+          ],
+          "answer": "A",
+          "explanation": "Expert systems encoded expert decision rules in software."
+        }
+      ]
+    },
+    {
+      "name": "Knowledge Management Models & Theories",
+      "questions": [
+        {
+          "question": "SECI model stages are:",
+          "options": [
+            "A. Socialise, Encode, Combine, Institutionalize",
+            "B. Socialization, Externalization, Combination, Internalization",
+            "C. Store, Extract, Combine, Integrate",
+            "D. Share, Explain, Collate, Internalize"
+          ],
+          "answer": "B",
+          "explanation": "SECI: Socialization, Externalization, Combination and Internalization."
+        },
+        {
+          "question": "Socialization in SECI means:",
+          "options": [
+            "A. Documenting procedures",
+            "B. Sharing tacit knowledge through shared experiences",
+            "C. Combining explicit reports",
+            "D. Storing knowledge in databases"
+          ],
+          "answer": "B",
+          "explanation": "Socialization is tacit-to-tacit transfer via experience and observation."
+        },
+        {
+          "question": "Externalization in SECI is:",
+          "options": [
+            "A. Writing tacit knowledge into explicit form",
+            "B. Practicing documented knowledge",
+            "C. Merging datasets",
+            "D. Ignoring tacit knowledge"
+          ],
+          "answer": "A",
+          "explanation": "Externalization converts tacit insights into explicit documents or models."
+        },
+        {
+          "question": "Combination in SECI involves:",
+          "options": [
+            "A. Tacit-to-tacit sharing",
+            "B. Integrating explicit knowledge sources",
+            "C. Ignoring documents",
+            "D. Solely mentoring"
+          ],
+          "answer": "B",
+          "explanation": "Combination merges explicit knowledge to create new explicit knowledge."
+        },
+        {
+          "question": "Internalization in SECI is:",
+          "options": [
+            "A. Converting explicit to tacit through practice",
+            "B. Shredding documents",
+            "C. Sharing tacit knowledge orally",
+            "D. Publishing reports"
+          ],
+          "answer": "A",
+          "explanation": "Internalization happens when people absorb explicit knowledge into tacit form."
+        },
+        {
+          "question": "Argyris & Schön are known for which concepts?",
+          "options": [
+            "A. SECI model",
+            "B. Espoused theory and theory-in-use, single- and double-loop learning",
+            "C. Skandia Navigator",
+            "D. Knowledge portals"
+          ],
+          "answer": "B",
+          "explanation": "They introduced espoused theory vs theory-in-use and single/double-loop learning."
+        },
+        {
+          "question": "Single-loop learning is:",
+          "options": [
+            "A. Changing underlying assumptions",
+            "B. Error correction without questioning assumptions",
+            "C. Learning how to learn",
+            "D. Group learning only"
+          ],
+          "answer": "B",
+          "explanation": "Single-loop learning corrects actions without changing values or policies."
+        },
+        {
+          "question": "Double-loop learning is:",
+          "options": [
+            "A. Reflecting on and changing underlying assumptions and norms",
+            "B. Copying competitors",
+            "C. Storing knowledge",
+            "D. Externalization only"
+          ],
+          "answer": "A",
+          "explanation": "Double-loop challenges mental models and organizational assumptions."
+        },
+        {
+          "question": "Deutero-learning refers to:",
+          "options": [
+            "A. Learning facts",
+            "B. Learning how to improve learning processes",
+            "C. Learning only from books",
+            "D. Discarding past knowledge"
+          ],
+          "answer": "B",
+          "explanation": "Deutero-learning is meta-learning: improving learning mechanisms themselves."
+        },
+        {
+          "question": "Levitt & March argued organisations store:",
+          "options": [
+            "A. Events only",
+            "B. The lessons and interpretations derived from events",
+            "C. Only databases",
+            "D. Nothing"
+          ],
+          "answer": "B",
+          "explanation": "They highlighted that organizations retain interpretations and lessons rather than raw events."
+        },
+        {
+          "question": "Markus's reuse roles include:",
+          "options": [
+            "A. Producer, intermediary, consumer",
+            "B. Owner, manager, director",
+            "C. Coder, tester, deployer",
+            "D. None of the above"
+          ],
+          "answer": "A",
+          "explanation": "Markus identifies producer, intermediary and consumer roles in knowledge reuse."
+        },
+        {
+          "question": "Which reuse situation involves practitioners in similar roles sharing knowledge?",
+          "options": [
+            "A. Shared Work Producers",
+            "B. Shared Work Practitioners",
+            "C. Expertise-seeking Novices",
+            "D. Secondary Miners"
+          ],
+          "answer": "B",
+          "explanation": "Shared Work Practitioners reuse knowledge across similar roles/contexts."
+        },
+        {
+          "question": "Which reuse situation involves extracting knowledge to apply in a different context?",
+          "options": [
+            "A. Shared Work Producers",
+            "B. Shared Work Practitioners",
+            "C. Expertise-seeking Novices",
+            "D. Secondary knowledge miners"
+          ],
+          "answer": "D",
+          "explanation": "Secondary miners repurpose knowledge for contexts other than originally intended."
+        },
+        {
+          "question": "Which model emphasizes social processes in knowledge creation?",
+          "options": [
+            "A. SECI",
+            "B. CMMI",
+            "C. Financial models",
+            "D. Payroll models"
+          ],
+          "answer": "A",
+          "explanation": "SECI centers on social interactions driving creation and conversion of knowledge."
+        },
+        {
+          "question": "Which learning type questions an organisation's goals and strategies?",
+          "options": [
+            "A. Single-loop learning",
+            "B. Double-loop learning",
+            "C. Surface learning",
+            "D. Passive learning"
+          ],
+          "answer": "B",
+          "explanation": "Double-loop learning re-examines objectives, policies and assumptions."
+        },
+        {
+          "question": "Which of the following is a common problem when converting tacit to explicit knowledge?",
+          "options": [
+            "A. Loss of context and nuance",
+            "B. Too much clarity",
+            "C. Reduced access",
+            "D. Increased tacitness"
+          ],
+          "answer": "A",
+          "explanation": "Externalisation can lose contextual subtleties vital to tacit knowledge."
+        },
+        {
+          "question": "Which is an example of externalization?",
+          "options": [
+            "A. Apprenticeship",
+            "B. Writing a best-practice manual from expert interviews",
+            "C. Informal coffee chat",
+            "D. Shadowing"
+          ],
+          "answer": "B",
+          "explanation": "Turning expert tacit knowledge into a manual is externalization."
+        },
+        {
+          "question": "Which of these is a use of the SECI model in organisations?",
+          "options": [
+            "A. Guide for knowledge creation and transfer practices",
+            "B. Financial audit only",
+            "C. Payroll processing",
+            "D. Office cleaning schedule"
+          ],
+          "answer": "A",
+          "explanation": "SECI helps design practices for creating and sharing knowledge."
+        },
+        {
+          "question": "Which concept is central to Argyris & Schön's view of organizational learning?",
+          "options": [
+            "A. Espoused theory vs theory-in-use",
+            "B. Financial ledger",
+            "C. Database schema",
+            "D. Office layout"
+          ],
+          "answer": "A",
+          "explanation": "They emphasize the gap between what is said (espoused) and what is actually done (theory-in-use)."
+        }
+      ]
+    },
+    {
+      "name": "Organisational Knowledge & Memory",
+      "questions": [
+        {
+          "question": "Organisational memory is:",
+          "options": [
+            "A. Collective ability to generate, store and retrieve knowledge",
+            "B. Only databases",
+            "C. Only individual memory",
+            "D. A payroll function"
+          ],
+          "answer": "A",
+          "explanation": "Organisational memory spans people, processes, structures and archives."
+        },
+        {
+          "question": "Walsh & Ungson identify which repositories for organisational memory?",
+          "options": [
+            "A. Individuals, culture, transformations, structures, external activities",
+            "B. Only databases",
+            "C. Only HR files",
+            "D. Only financial ledgers"
+          ],
+          "answer": "A",
+          "explanation": "They list multiple repositories including individuals, culture and structures."
+        },
+        {
+          "question": "The three stages of organisational memory are:",
+          "options": [
+            "A. Acquisition, retention, retrieval",
+            "B. Creation, deletion, ignoring",
+            "C. Planning, doing, paying",
+            "D. Input, output, waste"
+          ],
+          "answer": "A",
+          "explanation": "Memory involves acquiring knowledge, retaining it and retrieving when needed."
+        },
+        {
+          "question": "Which of the following is an example of a transformation repository?",
+          "options": [
+            "A. A formalized procedure evolved from a past incident",
+            "B. An employee's personal notes",
+            "C. A social chat",
+            "D. A competitor's website"
+          ],
+          "answer": "A",
+          "explanation": "Transformations are routines and procedures embedding past learning."
+        },
+        {
+          "question": "Controlled retrieval refers to:",
+          "options": [
+            "A. Deliberate searching in databases and archives",
+            "B. Immediate intuition recall",
+            "C. Forgetting events",
+            "D. Random browsing"
+          ],
+          "answer": "A",
+          "explanation": "Controlled retrieval is deliberate lookup of stored knowledge."
+        },
+        {
+          "question": "Automatic retrieval refers to:",
+          "options": [
+            "A. Intuitive recall by experienced people",
+            "B. Database queries",
+            "C. Archival extraction",
+            "D. None of the above"
+          ],
+          "answer": "A",
+          "explanation": "Automatic retrieval is tacit, intuitive recall by practitioners."
+        },
+        {
+          "question": "Artefacts of cooperation are:",
+          "options": [
+            "A. Explicit outputs like reports and meeting minutes",
+            "B. Shadows cast by teams",
+            "C. Only tacit knowledge",
+            "D. Personal opinions"
+          ],
+          "answer": "A",
+          "explanation": "Artefacts are tangible records of cooperative work."
+        },
+        {
+          "question": "Which perspective treats organisational memory mainly as storage and retrieval?",
+          "options": [
+            "A. IT perspective",
+            "B. OD perspective",
+            "C. Social perspective",
+            "D. Leadership perspective"
+          ],
+          "answer": "A",
+          "explanation": "The IT view focuses on databases and retrieval systems."
+        },
+        {
+          "question": "Which perspective emphasizes coaching, people and informal sharing for memory?",
+          "options": [
+            "A. Organisational Development (OD)",
+            "B. IT",
+            "C. Financial",
+            "D. Manufacturing"
+          ],
+          "answer": "A",
+          "explanation": "OD focuses on human and social processes for memory retention."
+        },
+        {
+          "question": "A failure to document rationale behind design decisions leads to which problem in reuse?",
+          "options": [
+            "A. Losing context and rationale, making reuse incomplete",
+            "B. Easier reuse",
+            "C. Higher profits",
+            "D. Faster onboarding"
+          ],
+          "answer": "A",
+          "explanation": "Missing rationale undermines effective reuse of past work."
+        },
+        {
+          "question": "Which repository often survives staff turnover?",
+          "options": [
+            "A. Structural routines and procedures",
+            "B. Individual tacit memory only",
+            "C. Temporary chat threads",
+            "D. Employee personal notebooks"
+          ],
+          "answer": "A",
+          "explanation": "Structures and procedures embed memory across the organization."
+        },
+        {
+          "question": "Which process helps convert experience into organisational memory?",
+          "options": [
+            "A. After-action reviews and documentation",
+            "B. Hoarding knowledge",
+            "C. Deleting old reports",
+            "D. Ignoring lessons learned"
+          ],
+          "answer": "A",
+          "explanation": "After-action reviews capture lessons for retention."
+        },
+        {
+          "question": "Which facility is considered external to the organization yet part of memory?",
+          "options": [
+            "A. Industry databases and former employees-turned-consultants",
+            "B. Private memos only",
+            "C. In-house emails only",
+            "D. Internal whiteboards only"
+          ],
+          "answer": "A",
+          "explanation": "External sources and actors contribute to organisational memory."
+        },
+        {
+          "question": "Which is a common risk when relying only on IT for memory?",
+          "options": [
+            "A. Losing tacit context not captured by documents",
+            "B. Perfect knowledge transfer",
+            "C. Instant tacit transfer",
+            "D. No need for culture"
+          ],
+          "answer": "A",
+          "explanation": "IT can't capture all tacit contextual knowledge."
+        },
+        {
+          "question": "Which tool supports retention of organisational knowledge?",
+          "options": [
+            "A. Document repositories and knowledge bases",
+            "B. Only coffee machines",
+            "C. Personal diaries kept offline",
+            "D. None of the above"
+          ],
+          "answer": "A",
+          "explanation": "Repositories help store and preserve organisational knowledge."
+        },
+        {
+          "question": "Which action supports retrieval of organisational memory?",
+          "options": [
+            "A. Improving indexing, metadata and search",
+            "B. Hiding reports",
+            "C. Removing tags",
+            "D. Random deletion"
+          ],
+          "answer": "A",
+          "explanation": "Good indexing and search make stored knowledge retrievable."
+        },
+        {
+          "question": "Which statement about organisational memory is true?",
+          "options": [
+            "A. It is spread across people, culture, processes, structures and environment",
+            "B. It is always stored in one place",
+            "C. It is irrelevant for decisions",
+            "D. It only contains financial data"
+          ],
+          "answer": "A",
+          "explanation": "Organisational memory is distributed across many facilities and people."
+        },
+        {
+          "question": "Which is an example of capturing tacit lessons for memory?",
+          "options": [
+            "A. Conducting interviews with departing experts and documenting insights",
+            "B. Shredding notes",
+            "C. Ignoring experienced staff",
+            "D. Avoiding documentation"
+          ],
+          "answer": "A",
+          "explanation": "Interviewing experts preserves tacit knowledge for organisational memory."
+        }
+      ]
+    },
+    {
+      "name": "Organisational Learning & Learning Organisations",
+      "questions": [
+        {
+          "question": "Organisational learning is:",
+          "options": [
+            "A. Individual training only",
+            "B. Creating, retaining, and transferring knowledge across the organisation",
+            "C. Purely storing documents",
+            "D. Marketing campaigns"
+          ],
+          "answer": "B",
+          "explanation": "Organisational learning covers creation, retention and sharing of knowledge."
+        },
+        {
+          "question": "Argyris & Schön say learning occurs when:",
+          "options": [
+            "A. Outcomes differ from expectations leading to reflection",
+            "B. People follow instructions only",
+            "C. Data is archived",
+            "D. Teams avoid feedback"
+          ],
+          "answer": "A",
+          "explanation": "A gap between expected and actual outcomes triggers inquiry and learning."
+        },
+        {
+          "question": "Espoused theory is:",
+          "options": [
+            "A. What people say guides their actions",
+            "B. Actual behaviour",
+            "C. External knowledge",
+            "D. IT policy"
+          ],
+          "answer": "A",
+          "explanation": "Espoused theory is declared beliefs or rules people say they follow."
+        },
+        {
+          "question": "Theory-in-use is:",
+          "options": [
+            "A. The real behaviour that guides actions",
+            "B. Printed manuals only",
+            "C. Company logos",
+            "D. Office plans"
+          ],
+          "answer": "A",
+          "explanation": "Theory-in-use is the implicit, actual practice shaping behaviour."
+        },
+        {
+          "question": "Single-loop learning corrects:",
+          "options": [
+            "A. Surface errors without changing assumptions",
+            "B. Core values",
+            "C. The entire strategy",
+            "D. Financial models"
+          ],
+          "answer": "A",
+          "explanation": "Single-loop focuses on adjustments within existing frameworks."
+        },
+        {
+          "question": "Double-loop learning involves:",
+          "options": [
+            "A. Questioning and changing underlying assumptions",
+            "B. Surface-level fixes",
+            "C. Only HR processes",
+            "D. IT maintenance"
+          ],
+          "answer": "A",
+          "explanation": "Double-loop challenges deeper beliefs and policies, not just actions."
+        },
+        {
+          "question": "Deutero-learning is:",
+          "options": [
+            "A. Learning how to learn and improving learning processes",
+            "B. Training manuals",
+            "C. Team dinners",
+            "D. Data archival"
+          ],
+          "answer": "A",
+          "explanation": "Deutero-learning focuses on improving the organisation's learning capability."
+        },
+        {
+          "question": "Senge’s five disciplines include all EXCEPT:",
+          "options": [
+            "A. Systems thinking",
+            "B. Personal mastery",
+            "C. Team learning",
+            "D. Financial engineering"
+          ],
+          "answer": "D",
+          "explanation": "Senge’s five are systems thinking, personal mastery, mental models, shared vision, and team learning."
+        },
+        {
+          "question": "Systems thinking refers to:",
+          "options": [
+            "A. Seeing the organisation as interconnected parts",
+            "B. Only using system software",
+            "C. Payroll systems",
+            "D. Office layout"
+          ],
+          "answer": "A",
+          "explanation": "Systems thinking sees interrelationships rather than isolated issues."
+        },
+        {
+          "question": "Personal mastery is:",
+          "options": [
+            "A. Ongoing self-improvement and skill development",
+            "B. Technical mastery only",
+            "C. Only formal degrees",
+            "D. Financial mastery"
+          ],
+          "answer": "A",
+          "explanation": "Personal mastery is individuals striving for continual learning and excellence."
+        },
+        {
+          "question": "Mental models are:",
+          "options": [
+            "A. Deeply held assumptions shaping behaviour",
+            "B. Only data models",
+            "C. Hardware schematics",
+            "D. Financial ratios"
+          ],
+          "answer": "A",
+          "explanation": "Mental models shape how people interpret situations and act in organisations."
+        },
+        {
+          "question": "Shared vision helps by:",
+          "options": [
+            "A. Aligning and motivating people towards common goals",
+            "B. Reducing training",
+            "C. Limiting creativity",
+            "D. Only HR processes"
+          ],
+          "answer": "A",
+          "explanation": "A shared vision motivates and gives direction across the organisation."
+        },
+        {
+          "question": "Team learning promotes:",
+          "options": [
+            "A. Collective problem solving and shared insights",
+            "B. Individual competition only",
+            "C. Isolated work",
+            "D. Redundancy"
+          ],
+          "answer": "A",
+          "explanation": "Team learning builds collective intelligence and deeper group understanding."
+        },
+        {
+          "question": "Leader as designer means leaders should:",
+          "options": [
+            "A. Create environments and structures that support learning",
+            "B. Dictate every decision",
+            "C. Micromanage",
+            "D. Avoid learning"
+          ],
+          "answer": "A",
+          "explanation": "Leaders design systems and culture that enable learning."
+        },
+        {
+          "question": "Leader as teacher implies:",
+          "options": [
+            "A. Coaching and facilitating others’ understanding",
+            "B. Only giving orders",
+            "C. Doing all training personally",
+            "D. Avoiding feedback"
+          ],
+          "answer": "A",
+          "explanation": "Leaders teach by coaching and helping others see reality clearly."
+        },
+        {
+          "question": "Leader as steward is about:",
+          "options": [
+            "A. Upholding organisational values and long-term purpose",
+            "B. Micro-budgeting",
+            "C. Only IT policy",
+            "D. Short-term profits only"
+          ],
+          "answer": "A",
+          "explanation": "Stewardship focuses on care for mission, people and long-term outcomes."
+        },
+        {
+          "question": "Which company is commonly cited for Kaizen and continuous improvement?",
+          "options": [
+            "A. Toyota",
+            "B. Microsoft",
+            "C. Facebook",
+            "D. Apple"
+          ],
+          "answer": "A",
+          "explanation": "Toyota’s Kaizen system is a classic example of continuous improvement and learning."
+        },
+        {
+          "question": "Which practice helps make individual learning organizational?",
+          "options": [
+            "A. Knowledge capture and sharing processes",
+            "B. Keeping lessons private",
+            "C. Removing documentation",
+            "D. Firing senior staff"
+          ],
+          "answer": "A",
+          "explanation": "Capturing and sharing individual learning helps spread it organization-wide."
+        }
+      ]
+    },
+    {
+      "name": "Knowledge Sharing & Reuse",
+      "questions": [
+        {
+          "question": "Successful explicit knowledge sharing requires:",
+          "options": [
+            "A. Articulation, awareness, access, guidance, and completeness",
+            "B. Only good hardware",
+            "C. Zero human interaction",
+            "D. Secrecy"
+          ],
+          "answer": "A",
+          "explanation": "These five criteria help make explicit knowledge findable and usable."
+        },
+        {
+          "question": "Tacit knowledge sharing most relies on:",
+          "options": [
+            "A. Databases",
+            "B. Informal networks, mentoring and practice",
+            "C. Only manuals",
+            "D. Batch processes"
+          ],
+          "answer": "B",
+          "explanation": "Tacit knowledge is transferred through social and relational channels."
+        },
+        {
+          "question": "Embedded knowledge is often transferred by:",
+          "options": [
+            "A. Scenario planning and after-action reviews",
+            "B. Only printing manuals",
+            "C. Deleting old process notes",
+            "D. Ignoring experience"
+          ],
+          "answer": "A",
+          "explanation": "Structured reviews and scenario planning help make embedded knowledge explicit."
+        },
+        {
+          "question": "Markus identifies which roles in reuse?",
+          "options": [
+            "A. Producer, intermediary, consumer",
+            "B. Designer, coder, tester",
+            "C. Manager, worker, CEO",
+            "D. None of the above"
+          ],
+          "answer": "A",
+          "explanation": "Markus describes roles that create, organise and use reusable knowledge."
+        },
+        {
+          "question": "Internal reuse is:",
+          "options": [
+            "A. Reusing one's own prior knowledge later",
+            "B. Always successful",
+            "C. Only external consultants’ work",
+            "D. Always impossible"
+          ],
+          "answer": "A",
+          "explanation": "Internal reuse means using knowledge created earlier by the same person or team."
+        },
+        {
+          "question": "External reuse tends to fail more often because:",
+          "options": [
+            "A. Context is often missing for the new user",
+            "B. Data is always clean",
+            "C. It is always better",
+            "D. It never requires adaptation"
+          ],
+          "answer": "A",
+          "explanation": "Lack of contextual information makes external reuse riskier."
+        },
+        {
+          "question": "An 'expertise-seeking novice' often struggles with:",
+          "options": [
+            "A. Framing questions and judging quality of knowledge",
+            "B. Running payroll",
+            "C. Building hardware",
+            "D. Filing invoices"
+          ],
+          "answer": "A",
+          "explanation": "Novices may not know how to ask the right questions or evaluate knowledge validity."
+        },
+        {
+          "question": "Which practice improves knowledge reuse?",
+          "options": [
+            "A. Adding context, rationale and metadata to documentation",
+            "B. Removing links and tags",
+            "C. Hiding reports",
+            "D. Deleting archives"
+          ],
+          "answer": "A",
+          "explanation": "Richer metadata and documented rationale support successful reuse."
+        },
+        {
+          "question": "Knowledge intermediaries do what?",
+          "options": [
+            "A. Organise, edit and package knowledge for others to use",
+            "B. Destroy content",
+            "C. Hide experts",
+            "D. Block access"
+          ],
+          "answer": "A",
+          "explanation": "Intermediaries prepare knowledge for retrieval and consumption."
+        },
+        {
+          "question": "Which is a common managerial issue for reuse?",
+          "options": [
+            "A. Cost of packaging and context capture",
+            "B. Always free",
+            "C. Always trivial",
+            "D. No time involved"
+          ],
+          "answer": "A",
+          "explanation": "Capturing and packaging knowledge for reuse requires time and resources."
+        },
+        {
+          "question": "Which is useful to find experts in an organization?",
+          "options": [
+            "A. Expertise directories or yellow pages",
+            "B. Random guessing",
+            "C. Filing cabinets only",
+            "D. Office gossip"
+          ],
+          "answer": "A",
+          "explanation": "Directories help locate people with relevant knowledge quickly."
+        },
+        {
+          "question": "Which is an artefact that supports knowledge sharing?",
+          "options": [
+            "A. FAQs, case studies and meeting minutes",
+            "B. Locked cabinets",
+            "C. Isolated knowledge",
+            "D. Deleted logs"
+          ],
+          "answer": "A",
+          "explanation": "Artefacts like FAQs and case studies capture cooperative knowledge for reuse."
+        },
+        {
+          "question": "Which factor encourages tacit sharing?",
+          "options": [
+            "A. Trust and supportive management",
+            "B. Punishment for sharing",
+            "C. Complete secrecy",
+            "D. High competition only"
+          ],
+          "answer": "A",
+          "explanation": "Trust and management support make people comfortable sharing tacit knowledge."
+        },
+        {
+          "question": "Which approach increases likelihood of successful transfer to novices?",
+          "options": [
+            "A. Guided mentoring and learning-by-doing",
+            "B. Dumping large reports",
+            "C. No guidance",
+            "D. Poor indexing"
+          ],
+          "answer": "A",
+          "explanation": "Mentoring and practical experience help novices learn complex skills."
+        },
+        {
+          "question": "Which is a sign of good knowledge reuse?",
+          "options": [
+            "A. High reuse rate and fewer repeated mistakes",
+            "B. Increased repeat errors",
+            "C. More duplicated effort",
+            "D. Lower productivity"
+          ],
+          "answer": "A",
+          "explanation": "Effective reuse reduces reinvention and prevents repeated errors."
+        },
+        {
+          "question": "Which practice helps reduce external reuse failure?",
+          "options": [
+            "A. Documenting context and assumptions",
+            "B. Removing rationale",
+            "C. Hiding authorship",
+            "D. Avoiding metadata"
+          ],
+          "answer": "A",
+          "explanation": "Context and assumptions help external users adapt knowledge correctly."
+        },
+        {
+          "question": "Which is an example of knowledge packaging by an intermediary?",
+          "options": [
+            "A. Creating templates and executive summaries",
+            "B. Random shredding",
+            "C. Deleting context",
+            "D. Only coding"
+          ],
+          "answer": "A",
+          "explanation": "Intermediaries make knowledge consumable via summaries and templates."
+        },
+        {
+          "question": "Which factor often reduces willingness to share knowledge?",
+          "options": [
+            "A. Fear of job loss or losing status",
+            "B. High trust environment",
+            "C. Reward systems for sharing",
+            "D. Open promotion policies"
+          ],
+          "answer": "A",
+          "explanation": "People may hoard knowledge to maintain status or job security."
+        }
+      ]
+    },
+    {
+      "name": "KM Tools & Technologies",
+      "questions": [
+        {
+          "question": "Groupware is used to:",
+          "options": [
+            "A. Facilitate collaboration and communication among teams",
+            "B. Only process payroll",
+            "C. Manage physical inventory",
+            "D. Maintain office appliances"
+          ],
+          "answer": "A",
+          "explanation": "Groupware supports collaboration (chat, shared docs, meetings)."
+        },
+        {
+          "question": "A Content Management System (CMS) primarily does what?",
+          "options": [
+            "A. Store, organise and control access to documents and content",
+            "B. Build hardware",
+            "C. Pay salaries",
+            "D. Run factory machines"
+          ],
+          "answer": "A",
+          "explanation": "CMSs like SharePoint organise and manage digital content."
+        },
+        {
+          "question": "Workflow systems are used to:",
+          "options": [
+            "A. Automate business processes and approvals",
+            "B. Replace all human workers",
+            "C. Print posters",
+            "D. Maintain office plants"
+          ],
+          "answer": "A",
+          "explanation": "Workflows route approvals and automate process steps."
+        },
+        {
+          "question": "Telepresence technologies enable:",
+          "options": [
+            "A. High-fidelity remote meetings simulating physical presence",
+            "B. Payroll calculation only",
+            "C. Document packaging",
+            "D. Manual filing"
+          ],
+          "answer": "A",
+          "explanation": "Telepresence provides immersive virtual meeting experiences."
+        },
+        {
+          "question": "E-learning platforms in KM support:",
+          "options": [
+            "A. Staff training and ongoing skill development",
+            "B. Only storage of financial records",
+            "C. Office cleaning schedules",
+            "D. Hardware acquisitions"
+          ],
+          "answer": "A",
+          "explanation": "E-learning delivers training modules supporting knowledge transfer."
+        },
+        {
+          "question": "Business Intelligence (BI) tools are used to:",
+          "options": [
+            "A. Produce dashboards and reports for decision-making",
+            "B. Manufacture goods",
+            "C. Replace tacit knowledge",
+            "D. Manage breakrooms"
+          ],
+          "answer": "A",
+          "explanation": "BI tools surface insights and trends for managers."
+        },
+        {
+          "question": "Data mining helps KM by:",
+          "options": [
+            "A. Discovering patterns and insights in large datasets",
+            "B. Replacing mentoring",
+            "C. Stopping collaboration",
+            "D. Closing portals"
+          ],
+          "answer": "A",
+          "explanation": "Data mining extracts useful patterns to generate knowledge."
+        },
+        {
+          "question": "Enterprise portals provide:",
+          "options": [
+            "A. A unified entry point to KM tools, content and services",
+            "B. Only HR forms",
+            "C. Only payroll modules",
+            "D. None of the above"
+          ],
+          "answer": "A",
+          "explanation": "Portals integrate access to documents, tools and knowledge resources."
+        },
+        {
+          "question": "Which is an example of groupware?",
+          "options": [
+            "A. Microsoft Teams or Slack",
+            "B. A drill press",
+            "C. A power transformer",
+            "D. A stapler"
+          ],
+          "answer": "A",
+          "explanation": "Teams and Slack are collaboration/groupware tools."
+        },
+        {
+          "question": "Which KM technology improves findability of content?",
+          "options": [
+            "A. Search engines with good metadata and indexing",
+            "B. Broken links",
+            "C. Scattered files",
+            "D. Random folder names"
+          ],
+          "answer": "A",
+          "explanation": "Search with metadata makes content retrievable and discoverable."
+        },
+        {
+          "question": "Which technology secures KM records immutably?",
+          "options": [
+            "A. Blockchain",
+            "B. Manual filing",
+            "C. Simple text files",
+            "D. None"
+          ],
+          "answer": "A",
+          "explanation": "Blockchain can add immutability and auditability to KM records."
+        },
+        {
+          "question": "Social media can be used for KM to:",
+          "options": [
+            "A. Enable informal knowledge sharing and communities",
+            "B. Replace all manuals",
+            "C. Stop collaboration",
+            "D. Only schedule meetings"
+          ],
+          "answer": "A",
+          "explanation": "Social platforms support informal exchange, Q&A and communities."
+        },
+        {
+          "question": "Which KM tool helps manage version control and collaboration on documents?",
+          "options": [
+            "A. Document management systems with check-in/check-out",
+            "B. Personal notebooks only",
+            "C. Manual typewriters",
+            "D. None"
+          ],
+          "answer": "A",
+          "explanation": "DMS features control versions and collaborative editing."
+        },
+        {
+          "question": "Which factor undermines KM tool adoption?",
+          "options": [
+            "A. Poor usability and lack of training",
+            "B. High trust",
+            "C. Strong leadership backing",
+            "D. Clear incentives"
+          ],
+          "answer": "A",
+          "explanation": "Bad UX and poor training reduce adoption of KM systems."
+        },
+        {
+          "question": "Which is an advantage of cloud-based KM tools?",
+          "options": [
+            "A. Easy access, scalability and remote collaboration",
+            "B. Always offline only",
+            "C. No need for governance",
+            "D. Eliminates need for people"
+          ],
+          "answer": "A",
+          "explanation": "Cloud tools offer broader access and scalability for KM."
+        },
+        {
+          "question": "Which technology helps surface relevant knowledge automatically?",
+          "options": [
+            "A. Recommender systems and AI-powered search",
+            "B. Manual filing only",
+            "C. Solely email chains",
+            "D. Hiding documents"
+          ],
+          "answer": "A",
+          "explanation": "AI and recommender systems suggest relevant content to users."
+        },
+        {
+          "question": "Which is a typical function of enterprise portals?",
+          "options": [
+            "A. Single sign-on, links to apps, news, knowledge hubs",
+            "B. Only printer management",
+            "C. Only budgeting",
+            "D. Only manufacturing control"
+          ],
+          "answer": "A",
+          "explanation": "Portals centralize access and simplify worker navigation to knowledge resources."
+        },
+        {
+          "question": "Which security concern is relevant to KM tools?",
+          "options": [
+            "A. Data privacy and access control",
+            "B. Printing speed",
+            "C. Pen supply",
+            "D. Coffee quality"
+          ],
+          "answer": "A",
+          "explanation": "KM must safeguard sensitive knowledge via permissions and privacy controls."
+        },
+        {
+          "question": "Which best practice helps KM tool effectiveness?",
+          "options": [
+            "A. Integrate tools into daily workflows and train users",
+            "B. Force a new tool without support",
+            "C. Keep tools isolated",
+            "D. Avoid governance"
+          ],
+          "answer": "A",
+          "explanation": "Integration, training and governance support tool effectiveness and adoption."
+        }
+      ]
+    },
+    {
+      "name": "Measurement, Maturity & KM Processes",
+      "questions": [
+        {
+          "question": "A common KM cycle is:",
+          "options": [
+            "A. Create → Capture → Store → Share → Apply → Refine",
+            "B. Plan → Stop → Delete",
+            "C. Hire → Fire",
+            "D. None of the above"
+          ],
+          "answer": "A",
+          "explanation": "KM cycles focus on creating, storing, sharing and applying knowledge."
+        },
+        {
+          "question": "Which is an example of a KM maturity model?",
+          "options": [
+            "A. APQC KM maturity levels",
+            "B. Payroll banding",
+            "C. Printer queue",
+            "D. Office lighting"
+          ],
+          "answer": "A",
+          "explanation": "APQC defines levels to assess KM maturity from basic to optimized."
+        },
+        {
+          "question": "The Skandia Navigator measures:",
+          "options": [
+            "A. Intellectual capital and KM performance",
+            "B. Employee attendance",
+            "C. Office rent",
+            "D. None"
+          ],
+          "answer": "A",
+          "explanation": "Skandia Navigator is an early tool for assessing intellectual capital."
+        },
+        {
+          "question": "Balanced Scorecard can be used to:",
+          "options": [
+            "A. Measure KM outcomes across perspectives (financial, customer, internal, learning)",
+            "B. Print documents",
+            "C. Replace knowledge sharing",
+            "D. Empty archives"
+          ],
+          "answer": "A",
+          "explanation": "Balanced Scorecard links KM to performance metrics across multiple dimensions."
+        },
+        {
+          "question": "A KPI for KM reuse is:",
+          "options": [
+            "A. Reuse rate (how often stored knowledge is reapplied)",
+            "B. Monthly coffee consumption",
+            "C. Copier usage",
+            "D. External advertising spend"
+          ],
+          "answer": "A",
+          "explanation": "Reuse rate measures how often stored knowledge is used again."
+        },
+        {
+          "question": "Which stage emphasises packaging and indexing knowledge for retrieval?",
+          "options": [
+            "A. Capture and storage",
+            "B. Deletion",
+            "C. Ignoring",
+            "D. Abandonment"
+          ],
+          "answer": "A",
+          "explanation": "Capture and storage include metadata, indexing and packaging for reuse."
+        },
+        {
+          "question": "Benchmarking in KM involves:",
+          "options": [
+            "A. Comparing practices against industry best practices",
+            "B. Only internal gossip",
+            "C. Ignoring competitors",
+            "D. Random copying"
+          ],
+          "answer": "A",
+          "explanation": "Benchmarking helps identify gaps and adopt best practices."
+        },
+        {
+          "question": "Which is an indicator of KM maturity?",
+          "options": [
+            "A. Integrated KM processes, leadership support and measurable outcomes",
+            "B. No measurement",
+            "C. Isolated initiatives",
+            "D. Random activity"
+          ],
+          "answer": "A",
+          "explanation": "Mature KM has governance, leadership sponsorship and measurable impact."
+        },
+        {
+          "question": "Which is a cost-related challenge to knowledge reuse?",
+          "options": [
+            "A. Time and money to organise and package context",
+            "B. Unlimited funding",
+            "C. No costs involved",
+            "D. None"
+          ],
+          "answer": "A",
+          "explanation": "Capturing context and packaging material for reuse is time-consuming and costly."
+        },
+        {
+          "question": "Which process ensures knowledge remains current and accurate?",
+          "options": [
+            "A. Knowledge review and updating processes",
+            "B. Leaving documents alone",
+            "C. Deleting manuals instantly",
+            "D. Never reviewing content"
+          ],
+          "answer": "A",
+          "explanation": "Periodic review and verification keeps knowledge relevant and reliable."
+        },
+        {
+          "question": "Which of the following is used to measure intellectual capital?",
+          "options": [
+            "A. Human, structural and relational capital metrics",
+            "B. Printer counts",
+            "C. Desk sizes",
+            "D. Coffee brand"
+          ],
+          "answer": "A",
+          "explanation": "Intellectual capital often measured across human, structural and relational components."
+        },
+        {
+          "question": "Which is a practical KM process step?",
+          "options": [
+            "A. Identify knowledge needs and prioritize",
+            "B. Ignore business goals",
+            "C. Randomly collect materials",
+            "D. No planning"
+          ],
+          "answer": "A",
+          "explanation": "Prioritizing knowledge needs ensures KM supports strategic goals."
+        },
+        {
+          "question": "A good KM metric should be:",
+          "options": [
+            "A. Aligned with business outcomes and measurable",
+            "B. Vague and unlinked to goals",
+            "C. Impossible to measure",
+            "D. Irrelevant"
+          ],
+          "answer": "A",
+          "explanation": "Metrics must tie KM activities to meaningful business outcomes."
+        },
+        {
+          "question": "Which method supports capturing tacit knowledge for retention?",
+          "options": [
+            "A. Interviews, narratives and storytelling",
+            "B. Only numerical datasets",
+            "C. Shredding documents",
+            "D. Avoiding contact"
+          ],
+          "answer": "A",
+          "explanation": "Narratives and interviews capture tacit insights and rationale."
+        },
+        {
+          "question": "CMMI-style maturity levels applied to KM indicate:",
+          "options": [
+            "A. Levels from ad-hoc to optimised KM capability",
+            "B. Always failing",
+            "C. Only technology improvements",
+            "D. Irrelevance"
+          ],
+          "answer": "A",
+          "explanation": "Maturity models describe progressive sophistication of KM practices."
+        },
+        {
+          "question": "Which activity helps measure KM adoption?",
+          "options": [
+            "A. Tracking contributions to repositories, search queries and user activity",
+            "B. Random guessing",
+            "C. Office decorations",
+            "D. Not measuring"
+          ],
+          "answer": "A",
+          "explanation": "Usage metrics and contribution rates indicate adoption and engagement."
+        },
+        {
+          "question": "Which is an example of an outcome metric for KM?",
+          "options": [
+            "A. Reduction in repeated mistakes or time to competency",
+            "B. Number of printers installed",
+            "C. Monthly sandwich orders",
+            "D. None"
+          ],
+          "answer": "A",
+          "explanation": "Outcome metrics tie KM to performance improvements and efficiency."
+        },
+        {
+          "question": "Which step is essential after measuring KM results?",
+          "options": [
+            "A. Continuous refinement and alignment with strategy",
+            "B. Ignoring findings",
+            "C. Deleting the data",
+            "D. Stopping KM"
+          ],
+          "answer": "A",
+          "explanation": "Measurement should lead to iterative improvement and strategic alignment."
+        }
+      ]
+    },
+    {
+      "name": "Case Studies, Applications & Future Trends",
+      "questions": [
+        {
+          "question": "Toyota's Kaizen exemplifies:",
+          "options": [
+            "A. Continuous improvement and local knowledge sharing",
+            "B. Isolated work only",
+            "C. Knowledge hoarding",
+            "D. No learning culture"
+          ],
+          "answer": "A",
+          "explanation": "Kaizen fosters incremental improvements and shared learning across teams."
+        },
+        {
+          "question": "Microsoft's shift under Satya Nadella emphasized:",
+          "options": [
+            "A. A 'learn-it-all' culture encouraging curiosity and collaboration",
+            "B. Eliminating learning",
+            "C. Ignoring innovation",
+            "D. Only financial focus"
+          ],
+          "answer": "A",
+          "explanation": "Nadella promoted curiosity and a growth mindset driving KM and innovation."
+        },
+        {
+          "question": "Google's 20% time policy intended to:",
+          "options": [
+            "A. Encourage employee innovation and side projects",
+            "B. Reduce productivity",
+            "C. Increase paperwork",
+            "D. Only track attendance"
+          ],
+          "answer": "A",
+          "explanation": "20% time allowed employees to pursue innovative ideas outside core tasks."
+        },
+        {
+          "question": "NASA's lessons learned database is an example of:",
+          "options": [
+            "A. Systematic knowledge capture for safety and reuse",
+            "B. Confidential payroll",
+            "C. Only financial reporting",
+            "D. Throwaway notes"
+          ],
+          "answer": "A",
+          "explanation": "NASA documents lessons to avoid repeating costly errors."
+        },
+        {
+          "question": "BP's 'Knowledge Café' concept was used to:",
+          "options": [
+            "A. Facilitate open discussion and knowledge sharing",
+            "B. Serve coffee only",
+            "C. Hide knowledge",
+            "D. Clean equipment"
+          ],
+          "answer": "A",
+          "explanation": "Knowledge Cafés provide informal spaces for exchange and reflection."
+        },
+        {
+          "question": "AI and machine learning impact KM by:",
+          "options": [
+            "A. Automating discovery, tagging and recommendation of knowledge",
+            "B. Replacing human judgment completely",
+            "C. Preventing collaboration",
+            "D. Irrelevant"
+          ],
+          "answer": "A",
+          "explanation": "AI can surface relevant knowledge and automate analytics, supporting KM."
+        },
+        {
+          "question": "Big data helps KM by:",
+          "options": [
+            "A. Providing large datasets for insight and pattern discovery",
+            "B. Eliminating need for expertise",
+            "C. Reducing analysis",
+            "D. Only storing pictures"
+          ],
+          "answer": "A",
+          "explanation": "Big data offers inputs for analytics that generate new knowledge."
+        },
+        {
+          "question": "Blockchain may help KM by:",
+          "options": [
+            "A. Providing tamper-proof audit trails and provenance for knowledge",
+            "B. Deleting records",
+            "C. Replacing mentors",
+            "D. Only for books"
+          ],
+          "answer": "A",
+          "explanation": "Blockchain secures records and ensures traceability of knowledge artifacts."
+        },
+        {
+          "question": "Which is an ethical concern in KM?",
+          "options": [
+            "A. Data privacy and misuse of sensitive knowledge",
+            "B. Too much sharing of cafeteria menus",
+            "C. Printer speed",
+            "D. Furniture color"
+          ],
+          "answer": "A",
+          "explanation": "KM must protect confidential information and respect privacy."
+        },
+        {
+          "question": "A future trend for KM is:",
+          "options": [
+            "A. Integration of AI, IoT, and real-time analytics",
+            "B. Only paper filing",
+            "C. Manual-only knowledge transfer",
+            "D. Obsolete practices"
+          ],
+          "answer": "A",
+          "explanation": "Emerging tech will deepen KM capabilities and real-time knowledge delivery."
+        },
+        {
+          "question": "Which company is famous for systematizing continuous improvement contributing to KM?",
+          "options": [
+            "A. Toyota",
+            "B. IBM",
+            "C. A local shop",
+            "D. None"
+          ],
+          "answer": "A",
+          "explanation": "Toyota's Kaizen and standardization support knowledge sharing and improvement."
+        },
+        {
+          "question": "Which example shows organisational KM failure due to culture?",
+          "options": [
+            "A. Knowledge hoarding leading to repeated failures",
+            "B. Full transparency",
+            "C. High trust",
+            "D. Active learning"
+          ],
+          "answer": "A",
+          "explanation": "When people hoard knowledge, the organisation loses learning and repeats mistakes."
+        },
+        {
+          "question": "Which is an example where KM saved costs or time?",
+          "options": [
+            "A. Reusing project templates and lessons to avoid rework",
+            "B. Losing documents",
+            "C. Never reviewing outcomes",
+            "D. Isolating teams"
+          ],
+          "answer": "A",
+          "explanation": "Reuse reduces duplication of effort and accelerates delivery."
+        },
+        {
+          "question": "Which practice supports cross-site knowledge transfer in multinational firms?",
+          "options": [
+            "A. Communities of Practice and exchange programs",
+            "B. Isolating teams by geography",
+            "C. Destroying reports",
+            "D. Avoiding communication"
+          ],
+          "answer": "A",
+          "explanation": "CoPs and staff exchanges spread practices across locations."
+        },
+        {
+          "question": "Which trend increases the need for KM in organizations?",
+          "options": [
+            "A. Rapid technological change and workforce mobility",
+            "B. Static markets",
+            "C. Permanent staff only",
+            "D. Closed systems"
+          ],
+          "answer": "A",
+          "explanation": "Fast change and turnover raise the importance of capturing and sharing knowledge."
+        },
+        {
+          "question": "Which is a common KM success factor seen in case studies?",
+          "options": [
+            "A. Leadership support, culture and aligned incentives",
+            "B. Only tech rollout without change management",
+            "C. No measurement",
+            "D. Isolated pilots only"
+          ],
+          "answer": "A",
+          "explanation": "Successful KM combines leadership, culture and incentives with technology."
+        },
+        {
+          "question": "Which case study tool helped measure intellectual capital?",
+          "options": [
+            "A. Skandia Navigator",
+            "B. A kitchen timer",
+            "C. A stapler",
+            "D. A parking ticket"
+          ],
+          "answer": "A",
+          "explanation": "Skandia Navigator helped quantify intellectual capital dimensions."
+        },
+        {
+          "question": "Which approach reduces risk of knowledge leakage?",
+          "options": [
+            "A. Proper access controls and governance",
+            "B. Open sharing of all confidential information",
+            "C. No governance",
+            "D. No training"
+          ],
+          "answer": "A",
+          "explanation": "Access control and policy reduce risk of unauthorized leakage."
+        },
+        {
+          "question": "Which is a benefit reported by firms that implemented KM?",
+          "options": [
+            "A. Faster project completion, higher innovation and fewer repeated mistakes",
+            "B. Only more meetings",
+            "C. Increased secrecy",
+            "D. Slower decisions"
+          ],
+          "answer": "A",
+          "explanation": "KM often improves innovation, efficiency and reduces rework."
+        }
+      ]
+    }
+  ]
+};
+
+const app = document.getElementById("app");
+
+let currentCategory = null;
+let currentQuestionIndex = 0;
+let score = 0;
+
+function renderCategories() {
+  app.innerHTML = `
+    <h1 class="text-2xl font-bold mb-6 text-center">📚 Knowledge Management Quiz</h1>
+    <p class="text-gray-600 mb-4 text-center">Select a category to begin:</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      ${quizData.categories.map((cat, index) => `
+        <button onclick="startCategory(${index})" 
+          class="p-4 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition">
+          ${cat.name}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function startCategory(index) {
+  currentCategory = quizData.categories[index];
+  currentQuestionIndex = 0;
+  score = 0;
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const questionObj = currentCategory.questions[currentQuestionIndex];
+
+  app.innerHTML = `
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl font-semibold">${currentCategory.name}</h2>
+      <button onclick="renderCategories()" 
+        class="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition">
+        ⬅ Back to Categories
+      </button>
+    </div>
+    <p class="text-gray-700 mb-4">Question ${currentQuestionIndex + 1} of ${currentCategory.questions.length}</p>
+    <h3 class="text-lg font-medium mb-4">${questionObj.question}</h3>
+    <div class="space-y-3">
+      ${questionObj.options.map((opt, i) => `
+        <button onclick="checkAnswer('${opt.charAt(0)}')" 
+          id="option-${i}"
+          class="block w-full text-left p-3 border rounded-lg hover:bg-blue-50 transition">
+          ${opt}
+        </button>
+      `).join("")}
+    </div>
+    <div id="feedback" class="mt-4"></div>
+    <div class="flex justify-between mt-6">
+      <button onclick="prevQuestion()" 
+        class="px-4 py-2 bg-gray-200 rounded-lg shadow hover:bg-gray-300 transition"
+        ${currentQuestionIndex === 0 ? "disabled" : ""}>
+        ⬅ Previous
+      </button>
+      <button onclick="nextQuestion()" 
+        class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+        Next ➡
+      </button>
+    </div>
+  `;
+}
+
+function checkAnswer(selected) {
+  const questionObj = currentCategory.questions[currentQuestionIndex];
+  const feedback = document.getElementById("feedback");
+  const correct = selected === questionObj.answer;
+
+  if (correct) {
+    score++;
+    feedback.innerHTML = `<p class="text-green-600 font-semibold">✅ Correct!</p>
+      <p class="text-gray-700 mt-2"><strong>Explanation:</strong> ${questionObj.explanation}</p>`;
+  } else {
+    feedback.innerHTML = `
+      <p class="text-red-600 font-semibold">❌ Incorrect. The correct answer is ${questionObj.answer}.</p>
+      <p class="text-gray-700 mt-2"><strong>Explanation:</strong> ${questionObj.explanation}</p>
+    `;
+  }
+
+  // Disable all options after answering
+  document.querySelectorAll("button[id^='option-']").forEach(btn => {
+    btn.disabled = true;
+    btn.classList.add("opacity-50", "cursor-not-allowed");
+  });
+}
+
+function nextQuestion() {
+  if (currentQuestionIndex < currentCategory.questions.length - 1) {
+    currentQuestionIndex++;
+    renderQuestion();
+  } else {
+    renderResults();
+  }
+}
+
+function prevQuestion() {
+  if (currentQuestionIndex > 0) {
+    currentQuestionIndex--;
+    renderQuestion();
+  }
+}
+
+function renderResults() {
+  app.innerHTML = `
+    <h2 class="text-2xl font-bold mb-4">🎉 Category Complete!</h2>
+    <p class="text-gray-700 mb-6">You scored <strong>${score}</strong> out of <strong>${currentCategory.questions.length}</strong>.</p>
+    <div class="flex gap-4">
+      <button onclick="startCategory(quizData.categories.indexOf(currentCategory))" 
+        class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+        🔄 Retry Category
+      </button>
+      <button onclick="renderCategories()" 
+        class="px-4 py-2 bg-gray-200 rounded-lg shadow hover:bg-gray-300 transition">
+        📋 Back to Categories
+      </button>
+    </div>
+  `;
+}
+
+// Init
+renderCategories();
+
+  </script>
+</body>
+</html>
